@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>{% block title %} Posts {% endblock %}</h1>
+    {% for vm in vmquery %}
+        <div class='post'>
+            <p>vm name: {{ vm['vmname'] }}</p>
+            <p>created by: {{ vm['vmowner'] }}</p>
+
+             <p>OS: {{ vm['OS_name'] }}</p>
+             <p>OS platform: {{ vm['OS_platform'] }}</p>
+             <p>OS Version: {{ vm['OS_version'] }}</p>
+             <p>OS Kernel: {{ vm['Kernel'] }}</p>
+             <p>CPU: {{ vm['cpuname'] }}</p>
+             <p>RAM: {{ vm['ram'] }}</p>
+             
+ 
+           
+            
+        </div>
+    {% endfor %}
+{% endblock %}

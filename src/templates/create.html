@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>{% block title %} Add a New Post {% endblock %}</h1>
+    <form method="POST">
+
+        <label for="title">vmname</label><br>
+        <input name="vmname" value="1" type="text">
+        <br>
+        <br><br>
+
+
+        <label for="title">OS</label>
+        <br>
+        
+        <select type="text" name="os"
+             
+               value="{{ request.form['title'] }}">
+               {% for vm in opsys %}
+               <option>{{ vm['OS_name'] }}</option>
+               {% endfor %}
+        </select>
+        
+        <br><br>
+        <label for="title">Memory</label><br>
+        <select name="memory" type="number">
+            <option>1024</option>
+            <option>2048</option>
+        </select>
+
+        <br><br>
+        <br><br>
+        <label for="title">Cores</label><br>
+        <input name="cores" type="number">
+          
+        
+
+        <br><br>
+        <label for="title">user</label><br>
+        <input name="user" value="1" type="number">
+        <br>
+        <br><br>
+        <label for="title">CPU</label><br>
+        <select name="cpu" type="number">
+            {% for cpuarch in cpu %}
+
+                <option>{{cpuarch['cpuname']}}</option>
+
+            {% endfor %}
+        </select>
+
+    
+        <button type="submit">Submit</button>
+    </form>
+{% endblock %}
